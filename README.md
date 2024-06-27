@@ -1,0 +1,2 @@
+# nixconfs
+my nix confs
