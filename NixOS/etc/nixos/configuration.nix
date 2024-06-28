@@ -12,6 +12,8 @@
       <nixos-hardware/microsoft/surface/surface-pro-intel>
       <nixos-hardware/common/gpu/nvidia>
       <nixos-hardware/common/cpu/intel>
+	  ./packages.nix
+	  ./services.nix
     ];
 
   # Bootloader.
@@ -104,101 +106,18 @@
     ];
   };
 
-  # Install firefox.
+  # Install programs
   #programs.firefox.enable = true;
+   programs.thefuck.enable = true;
+   programs.traceroute.enable = true;
+   
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-     surface-control
-     pkgs.gh
-     pkgs.steam
-     pkgs.pamtester
-     pkgs.sstp
-     pkgs.pam_u2f
-     pkgs.sherlock
-     pkgs.ipscan
-     pkgs.bettercap
-     pkgs.gnome.seahorse
-     pkgs.duo-unix
-     pkgs.ssh-mitm
-     pkgs.john
-     pkgs.johnny
-     pkgs.firefox
-     pkgs.bitwarden-desktop
-     pkgs.bitwarden-cli
-     pkgs.intel-media-driver
-     pkgs.wgnord
-     pkgs.htop
-     pkgs.postman
-     pkgs.git
-     pkgs.appimage-run
-     pkgs.wget
-     pkgs.kitty
-     pkgs.curl
-     pkgs.wine64
-     pkgs.vscode
-     pkgs.coreutils-full
-     pkgs.dnf5
-     pkgs.dnf-plugins-core
-     pkgs.dog
-     pkgs.doggo
-     pkgs.fwupd
-     pkgs.fwupd-efi
-     pkgs.intel-gpu-tools
-     pkgs.vaapiIntel
-     pkgs.intelmetool
-     pkgs.inteltool
-     pkgs.iperf2
-     pkgs.iperf
-     pkgs.iperf3d
-     pkgs.kitty-img
-     pkgs.kitty-themes
-     pkgs.kittysay
-     pkgs.libreoffice
-     pkgs.mesa
-     pkgs.mesa_drivers
-     pkgs.metasploit
-     pkgs.microsoft-edge
-     pkgs.mono
-     pkgs.mtr
-     pkgs.mtr-exporter
-     pkgs.mtr-gui
-     pkgs.networkmanager-openvpn
-     pkgs.networkmanager-sstp
-     pkgs.networkmanager_strongswan
-     pkgs.networkmanager-vpnc
-     pkgs.nmap
-     pkgs.onedrive
-     pkgs.onedrivegui
-     pkgs.pciutils
-     pkgs.jdk22
-     pkgs.openssl
-     pkgs.openvpn
-     pkgs.vpnc
-     pkgs.winbox
-     pkgs.wine64Packages.stableFull
-     pkgs.wine64Packages.waylandFull
-     pkgs.wineWow64Packages.waylandFull
-     pkgs.wineWow64Packages.full
-     pkgs.winetricks
-     pkgs.wireguard-tools
-     pkgs.wireshark
-     pkgs.wg-netmanager
-     pkgs.yubico-pam
-     pkgs.yubico-piv-tool
-     pkgs.yubikey-agent
-     pkgs.yubikey-manager-qt
-     pkgs.yubikey-personalization
-     pkgs.remmina
-     pkgs.firewalld
-     
-  ];
+  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -209,61 +128,13 @@
    };
 
   # List services that you want to enable:
-    services.udev.packages = [
-      pkgs.iptsd
-      pkgs.surface-control
-    ];
-
-    systemd.packages = [
-      pkgs.iptsd
-    ];
-
-  # Enable the OpenSSH daemon.
-    services.openssh.enable = true;
-    services.flatpak.enable = true;
-    services.pcscd.enable = true;
-    services.fwupd.enable = true;
-    security.pam.services = {
-      login.u2fAuth = true;
-      sudo.u2fAuth = true;
-    };
-    #security.pam.yubico = {
-    #  enable = true;
-    #  debug = true;
-    #  control = "sufficient";
-    #  mode = "challenge-response";
-    #  id = [ "22532244" ];
-    #  challengeResponsePath = "/var/yubico";
-      
-    #};
-
-    security.pam.services.login.enableKwallet = true;
-
-    #services.udev.extraRules = ''
-    #     ACTION=="remove",\
-    #      ENV{ID_BUS}=="usb",\
-    #      ENV{ID_MODEL_ID}=="0407",\
-    #      ENV{ID_VENDOR_ID}=="1050",\
-    #      ENV{ID_VENDOR}=="Yubico",\
-    #      RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
-    #  '';
-    security.duosec = {
-      ssh.enable = true;
-      pam.enable = true;
-      integrationKey = "DIXOWSN23FRF9AZY8MED";
-      secretKeyFile = "/run/keys/duo_skey";
-      host = "api-124e8e0f.duosecurity.com";
-      failmode = "safe";
-      pushinfo = true;
-      autopush = true;
-    };
 
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+   networking.firewall.allowedTCPPorts = [ 22 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+   networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
