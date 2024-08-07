@@ -24,7 +24,7 @@
   hardware.graphics.enable = true;
   hardware.nvidia.modesetting.enable = true;
 
-  networking.hostName = "mav-blm-wk00"; # Define your hostname.
+  networking.hostName = "cameronnix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -114,7 +114,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+   programs.mtr.enable = true;
    programs.gnupg.agent = {
      enable = true;
      enableSSHSupport = true;
