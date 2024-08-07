@@ -8,8 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <nixos-hardware/microsoft/surface/common>
-      <nixos-hardware/microsoft/surface/surface-pro-intel>
       <nixos-hardware/common/gpu/nvidia>
       <nixos-hardware/common/cpu/intel>
 	  ./packages.nix
@@ -25,13 +23,8 @@
 
   hardware.graphics.enable = true;
   hardware.nvidia.modesetting.enable = true;
-  #hardware.nvidia.prime.sync.enable = true;
-  hardware.nvidia.prime.offload.enable = true;
-  hardware.nvidia.prime.nvidiaBusId = "PCI:3:0:0";
-  hardware.nvidia.prime.intelBusId = "PCI:0:2:0";
 
-
-  networking.hostName = "cameronsurface"; # Define your hostname.
+  networking.hostName = "mav-blm-wk00"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-environment.systemPackages = with pkgs; [
+{ config, pkgs, ... }:
+{
 
      surface-control
      pkgs.gh
@@ -84,4 +84,4 @@ environment.systemPackages = with pkgs; [
      pkgs.remmina
      pkgs.firewalld
      
-  ];
+  };

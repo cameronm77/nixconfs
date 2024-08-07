@@ -1,14 +1,5 @@
 { pkgs, ... }:
 
-services.udev.packages = [
-      pkgs.iptsd
-      pkgs.surface-control
-    ];
-
-    systemd.packages = [
-      pkgs.iptsd
-    ];
-
   # Enable the OpenSSH daemon.
     services.openssh.enable = true;
     services.flatpak.enable = true;
@@ -38,13 +29,13 @@ services.udev.packages = [
     #      ENV{ID_VENDOR}=="Yubico",\
     #      RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
     #  '';
-    security.duosec = {
-      ssh.enable = true;
-      pam.enable = true;
-      integrationKey = "DIXOWSN23FRF9AZY8MED";
-      secretKeyFile = "/run/keys/duo_skey";
-      host = "api-124e8e0f.duosecurity.com";
-      failmode = "safe";
-      pushinfo = true;
-      autopush = true;
-    };
+    #security.duosec = {
+      #ssh.enable = true;
+      #pam.enable = true;
+      #integrationKey = "DIXOWSN23FRF9AZY8MED";
+      #secretKeyFile = "/run/keys/duo_skey";
+      #host = "api-124e8e0f.duosecurity.com";
+      #failmode = "safe";
+      #pushinfo = true;
+      #autopush = true;
+    #};
