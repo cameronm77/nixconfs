@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    #_3proxy
     afpfs-ng
     aircrack-ng
     airgeddon
@@ -64,7 +63,6 @@
     libosmocore
     libtins
     ligolo-ng
-    #linuxKernel.packages.linux_zen.batman_adv
     macchanger
     mailsend
     mapcidr
@@ -117,8 +115,6 @@
     soapui
     socat
     spiped
-    # https://github.com/NixOS/nixpkgs/pull/308093
-    #ssh-mitm
     sshuttle
     ssldump
     sslh
@@ -144,8 +140,6 @@
     wavemon
     wifite2
     wireshark
-    # haskell connection-0.3.1 dependency of wstunnel marked as broken
-    #wstunnel
     yersinia
     zap
     zdns
