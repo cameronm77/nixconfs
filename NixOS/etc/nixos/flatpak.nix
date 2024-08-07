@@ -40,9 +40,6 @@
      ${pkgs.flatpak}/bin/flatpak install -y flathub com.netxms.NetXMSClient
      ${pkgs.flatpak}/bin/flatpak install -y flathub org.signal.Signal
      ${pkgs.flatpak}/bin/flatpak install -y flathub com.getpostman.Postman
-     ${pkgs.flatpak}/bin/flatpak install -y flathub com.visualstudio.code
-     ${pkgs.flatpak}/bin/flatpak install -y flathub com.microsoft.Edge
-     ${pkgs.flatpak}/bin/flatpak install -y flathub com.bitwarden.desktop
      ${pkgs.flatpak}/bin/flatpak install -y flathub org.nmap.Zenmap
      ${pkgs.flatpak}/bin/flatpak install -y flathub com.github.Anuken.Mindustry
      ${pkgs.flatpak}/bin/flatpak install -y flathub com.atlauncher.ATLauncher
