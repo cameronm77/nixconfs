@@ -1,8 +1,6 @@
 { pkgs,... }:
 {
   environment.systemPackages = with pkgs; [
-    #_3proxy
-    #ad-miner # To be backported to 23.11
     adenum
     aesfix
     aeskeyfind
@@ -12,7 +10,6 @@
     amass
     apache-users
     apachetomcatscanner
-    #archivebox https://github.com/NixOS/nixpkgs/issues/276947
     ares-rs
     argus
     argus-clients
@@ -63,9 +60,6 @@
     crlfuzz
     crowbar
     ctypes_sh
-    # https://github.com/NixOS/nixpkgs/issues/308262
-    #cutter
-    #cutterPlugins.rz-ghidra
     dalfox
     darkstat
     davtest
@@ -83,7 +77,6 @@
     dorkscout
     driftnet
     dsniff
-    #dublin-traceroute #To be backported to 23.11
     dump1090
     edb
     enum4linux
@@ -114,7 +107,6 @@
     ghdorker
     ghidra
     girsh
-    #git-hound # Marked as broken
     gitleaks
     go-cve-search
     gobuster
@@ -150,8 +142,6 @@
     iputils
     jadx
     jaeles
-    # https://github.com/NixOS/nixpkgs/issues/308260
-    #jd-cli
     jd-gui
     jnetmap
     john
@@ -166,7 +156,6 @@
     kerbrute
     kismet
     kiterunner
-    # klee # https://github.com/NixOS/nixpkgs/issues/285896
     knockpy
     kube-hunter
     ldapdomaindump
@@ -180,8 +169,6 @@
     log4j-scan
     lynis
     macchanger
-    # pyhanko error on maigret
-    #maigret
     mailsend
     maltego
     mapcidr
@@ -235,7 +222,6 @@
     pwnat
     pwncat
     pwndbg
-    # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.angrop
     python312Packages.arsenic
     python312Packages.dnspython
@@ -246,22 +232,13 @@
     python312Packages.minikerberos
     python312Packages.myjwt
     python312Packages.netmap
-    # nose-1.3.7 not supported for interpreter python3.12
     python311Packages.patator
     python312Packages.pyjsparser
     python312Packages.pypykatz
     python312Packages.rfcat
-    # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.ropgadget
-    # capstone-5.0.1 not supported for interpreter python3.12
     python311Packages.ropper
     python312Packages.scapy
-    # https://github.com/NixOS/nixpkgs/issues/308235
-    #python312Packages.scrapy
-    # https://github.com/NixOS/nixpkgs/issues/308232
-    #python312Packages.scrapy-deltafetch
-    #python312Packages.scrapy-fake-useragent
-    #python312Packages.scrapy-splash
     python312Packages.shodan
     python312Packages.spyse-python
     python312Packages.sshtunnel
@@ -279,7 +256,6 @@
     responder
     retdec
     rinetd
-    #rita #To be backported to 23.11
     rizin
     rizinPlugins.rz-ghidra
     ropgadget
