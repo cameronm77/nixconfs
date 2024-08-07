@@ -95,12 +95,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      thunderbird
     ];
   };
 
   # Install programs
-  #programs.firefox.enable = true;
+  programs.firefox.enable = true;
    programs.thefuck.enable = true;
    programs.traceroute.enable = true;
    
