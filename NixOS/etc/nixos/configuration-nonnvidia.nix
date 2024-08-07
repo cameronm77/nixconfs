@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <nixos-hardware/common/gpu/nvidia>
       <nixos-hardware/common/cpu/intel>
 	  ./packages.nix
 	  ./services.nix
@@ -22,9 +21,8 @@
   nix.settings.trusted-users = ["root" "cmilani" ];
 
   hardware.graphics.enable = true;
-  hardware.nvidia.modesetting.enable = true;
 
-  networking.hostName = "mav-blm-wk00"; # Define your hostname.
+  networking.hostName = "cameronnix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -100,7 +98,6 @@
   };
 
   # Install programs
-  #programs.firefox.enable = true;
    programs.thefuck.enable = true;
    programs.traceroute.enable = true;
    
@@ -114,7 +111,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+   programs.mtr.enable = true;
    programs.gnupg.agent = {
      enable = true;
      enableSSHSupport = true;
