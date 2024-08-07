@@ -45,7 +45,6 @@
     pixiewps
     psudohash
     python312Packages.myjwt
-    # nose-1.3.7 not supported for interpreter python3.12
     python311Packages.patator
     python312Packages.pypykatz
     rarcrack
