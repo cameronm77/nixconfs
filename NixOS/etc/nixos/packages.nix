@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
      pkgs.gh
      pkgs.steam
      pkgs.pamtester
@@ -80,5 +81,5 @@
      pkgs.yubikey-personalization
      pkgs.remmina
      pkgs.firewalld
-     
+   ]
   };
