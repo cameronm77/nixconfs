@@ -86,19 +86,28 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.cmilani = {
-    isNormalUser = true;
-    description = "Cameron";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-      thunderbird
+    users = { 
+      mutableUsers = true;
+      defaultUserShell = pkgs.zsh;
+
+    users = {
+      cmilani = {
+        isNormalUser = true;
+        description = "Cameron";
+        extraGroups = [ "networkmanager" "wheel" ];
+        packages = with pkgs; [
+         kdePackages.kate
+         thunderbird
     ];
+   };
   };
+ };
 
   # Install programs
    programs.thefuck.enable = true;
    programs.traceroute.enable = true;
+   programs.hyprland.enable = true;   
+   programs.zsh.enable = true;
    
 
   # Allow unfree packages
