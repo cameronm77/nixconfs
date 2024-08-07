@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 {
-
-     surface-control
      pkgs.gh
      pkgs.steam
      pkgs.pamtester
@@ -10,7 +8,6 @@
      pkgs.sherlock
      pkgs.ipscan
      pkgs.bettercap
-     pkgs.gnome.seahorse
      pkgs.duo-unix
      pkgs.ssh-mitm
      pkgs.john
