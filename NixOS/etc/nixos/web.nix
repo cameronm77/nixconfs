@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     aflplusplus
-    #archivebox # python-django dep is marked as insecure
     apachetomcatscanner
     arjun
     assetfinder
@@ -58,12 +57,6 @@
     python312Packages.arsenic
     python312Packages.httpx
     python312Packages.pyjsparser
-    # https://github.com/NixOS/nixpkgs/issues/308235
-    #python312Packages.scrapy
-    # https://github.com/NixOS/nixpkgs/issues/308232
-    #python312Packages.scrapy-deltafetch
-    #python312Packages.scrapy-fake-useragent
-    #python312Packages.scrapy-splash
     python312Packages.thefuzz
     radamsa
     responder
@@ -72,7 +65,6 @@
     soapui
     sqlmap
     subjs
-    #swftools
     trinity
     wafw00f
     wapiti
