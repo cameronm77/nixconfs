@@ -8,9 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <nixos-hardware/common/cpu/intel>
-	  ./packages.nix
-	  ./services.nix
+      ./packages.nix
+      ./services.nix
     ];
 
   # Bootloader.
@@ -93,7 +92,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      thunderbird
     ];
   };
 
